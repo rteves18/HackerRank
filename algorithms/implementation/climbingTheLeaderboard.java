@@ -42,8 +42,8 @@ public class climbingTheLeaderboard {
 	for(int i =0; i < m; i++){
 		rankFound = false;
 		while(!rankFound){
-	    		System.out.println("rankNum: " + rankNum);	
-	    		System.out.println("counter: " + counter);	
+//	    		System.out.println("rankNum: " + rankNum);	
+//	    		System.out.println("counter: " + counter);	
 			j = rankNum-counter;	
 			if(j < 0){
 				System.out.println(1);
