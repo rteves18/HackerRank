@@ -6,23 +6,15 @@ public class Solution {
     public static void insertionSortPart2(int[] ar)
     {      
             for(int i=0; i < ar.length; i++){
-	    if(ar[i] > ar[i+1]){
-		int right = ar[i+1];
-		int left = ar[i];
-		int counter = i;
-	    	while(left >= right && counter >= 0){
-			ar[counter+1] = left;
-			ar[counter] = right;
-			if(counter !=1)
-				counter--;
-			if(counter >= 0){
-				left = ar[counter];
-				right = ar[counter+1];
-			}
+		int key = ar[i];
+		int counter = i-1;
+	    	while(counter >= 0 && ar[counter] >= key){
+			ar[counter+1] = ar[counter];
+			counter--;
 		}
+		ar[counter+1] = key;
+	    	printArray(ar);
 	    }
-	    printArray(ar);
-            }
     }  
     
     
