@@ -1,18 +1,18 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class insertionSort2 {
 
     public static void insertionSortPart2(int[] ar)
     {      
-            for(int i=0; i < ar.length; i++){
+            for(int i=1; i < ar.length; i++){
 		int key = ar[i];
-		int counter = i-1;
-	    	while(counter >= 0 && ar[counter] >= key){
-			ar[counter+1] = ar[counter];
+		int counter = i;
+	    	while(counter >= 1 && ar[counter-1] >= key){
+			ar[counter] = ar[counter-1];
 			counter--;
 		}
-		ar[counter+1] = key;
+		ar[counter] = key;
 	    	printArray(ar);
 	    }
     }  
