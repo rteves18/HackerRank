@@ -28,7 +28,7 @@ if [[ $file == *.java ]]; then
 	echo "Running $file ..."; 	java $filename
 else
 	cat << EOF
-Error: Could not file Java file in
+Error: Could not find Java file in
        current working directory.
 EOF
 fi
