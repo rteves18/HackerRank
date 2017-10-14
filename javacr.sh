@@ -18,7 +18,7 @@ fi
 
 
 lastModFile="$(find . -type f -maxdepth 1 -name "*.java" -print0 | xargs -0 stat -f "%m %N" |
-sort -rn | cut -f2- -d" ")"
+sort -rn | head -1 | cut -f2- -d" ")"
 file=${lastModFile#"./"}
 
 if [[ $file == *.java ]]; then
