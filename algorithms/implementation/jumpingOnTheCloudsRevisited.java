@@ -6,6 +6,12 @@ import java.util.regex.*;
 
 public class jumpingOnTheCloudsRevisited {
     public static void main(String args[] ) throws Exception {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+	Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int c[] = new int[n];
+        for(int c_i=0; c_i < n; c_i++){
+            c[c_i] = in.nextInt();
+        }
     }
 }
