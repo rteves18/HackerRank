@@ -1,8 +1,12 @@
 #!/bin/bash
 
-specific_file() {
-	echo "Compiling $file ..."; 	javac $file
-	echo "Running $filename ...";   java $filename
+compile_run_file() {
+	echo "Compiling $file ..."		
+		if javac $file; then
+			echo "Running $filename ..."; 	java $filename
+		else
+			exit 1
+		fi
 }
 
 last_modified() {
@@ -13,8 +17,7 @@ last_modified() {
 	if [[ $file == *.java ]]; then
 	
 		filename=${file%%.*} 
-		echo "Compiling $file ..."; javac $file 
-		echo "Running $filename ..."; 	java $filename
+		compile_run_file
 	else
 		cat << EOF
 Error: Could not find Java file in
@@ -46,7 +49,7 @@ elif [ $# -eq 1 ]
    then
 	file=$1
 	filename=${file%%.*}
-	specific_file
+	compile_run_file
 else
    	usage
 fi
