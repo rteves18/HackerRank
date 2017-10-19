@@ -9,24 +9,30 @@ public class appendAndDelete {
         Scanner in = new Scanner(System.in);
         String s = in.next();
         String t = in.next();
+	int char_diff = 0;
+	int max_len = s.length() + t.length();
+	String answer = "No";
         int k = in.nextInt();
-	char[] sArr = s.toCharArray();
-	char[] tArr = t.toCharArray();
-	for(int i = 0; i < s.length(); i++){
-		System.out.println("s " + sArr[i]);
-		System.out.println("t " + tArr[i]);
-		if(sArr[i] != tArr[i]){
-			System.out.println(k);
-			k = k - (t.length() - i);
-			System.out.println(k);
-			k = k - (s.length() - i);
-			System.out.println(k);
-			break;
-		}
-	System.out.println(k);
+	int diff = Math.abs(s.length() - t.length());
+	if(diff == 0){
+		if(k >= max_len) answer = "Yes";
+		else {
+			for(int i = 0; i < s.length(); i++){
+				if(s.charAt(i) != t.charAt(i)){
+				char_diff =  s.length() - i;
+				break;
+				}
+			}
+			if(char_diff % 2 == 0 && k % 2 == 0) answer = "Yes";
+			if(char_diff % 2 != 0 && k % 2 != 0) answer = "Yes";
+			if(k < char_diff * 2) answer = "No";
+		}	
+	} else if (diff % 2 == 0){
+		if(k % 2 == 0) answer = "Yes";
+	} else{
+		if(k % 2 != 0) answer = "Yes";
 	}
-	String answer = "";
-	answer = k == 0 ? "Yes" : "No";
+	if(k >= max_len) answer = "Yes";
 	System.out.println(answer);
     }
 }
