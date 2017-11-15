@@ -9,7 +9,7 @@ public class equalizeTheArray {
 	Scanner in = new Scanner(System.in);
 	int n = in.nextInt();
 	int[] arr = new int[n];
-	int[] freq = new int[100];
+	int[] freq = new int[1000];
 	int maxCount = 0;
 	int maxNum = 0;
 	for(int i = 0; i < n; i++){
